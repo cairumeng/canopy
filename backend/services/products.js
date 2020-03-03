@@ -18,7 +18,7 @@ const getProducts = async (pageIndex, pageSize = 18, searchText) => {
 
   return {
     products: await Promise.all(
-      result.rows.map(async row => {
+      result.rows.map(async (row) => {
         return {
           ...row.dataValues,
           images: await row.getImages(),
@@ -30,7 +30,7 @@ const getProducts = async (pageIndex, pageSize = 18, searchText) => {
   }
 }
 
-const getProduct = async id => {
+const getProduct = async (id) => {
   const product = await Product.findOne({
     where: {
       id,

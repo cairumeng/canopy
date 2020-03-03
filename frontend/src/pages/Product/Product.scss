@@ -1,0 +1,106 @@
+.product-detail {
+    background-color: white;
+    margin-top: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 0px 13px 40px -24px rgba(0,0,0,0.15);
+    .product-preview {
+        width: 80%;
+        margin: 10%;
+        max-height: 400px;
+    }
+    .product-images {
+       margin-left: 10%;
+       img {
+           margin-right: 5px;
+           border:2px solid whitesmoke;
+
+           &:hover{
+               border-color:#2fdab8; 
+           }
+       }
+       
+    }
+    h1 {
+        color: #525252;
+        font-size: 32px;
+        font-weight: 300;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        line-height: 42px;
+        max-height: 84px;
+        overflow: hidden;
+        margin: 10% 0 0;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .brand{
+       margin:20px 0 0 0;
+       text-transform: uppercase;
+       color: #999999;
+       font-weight: 700;
+       -moz-osx-font-smoothing: grayscale;
+       -webkit-font-smoothing: antialiased;
+       letter-spacing: 2px;
+    }
+    .price-button{
+    font-family: europa,'Helvetica Neue', 'Helvetica', sans-serif;
+    vertical-align: middle;
+    background-color: #2fdab8;
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 25px 8px 25px 0;
+    padding: 13px 20px 15px;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    }
+    .avatar{
+        background-color: #ebebeb;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        background-size: cover;
+        border: none;
+        display: inline-block;
+        font-size: 0;
+        height: 48px;
+        width: 48px;
+        position: relative;
+        -webkit-transition: margin-left 0.1s ease-out;
+        transition: margin-left 0.1s ease-out;
+    }
+   
+    .icon-heart{
+        color: #999999;
+        margin-right:10px;
+        cursor: pointer;
+        font-size: 15px;
+        cursor: pointer;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 500;
+        -webkit-font-smoothing: subpixel-antialiased;
+        color: #999999;
+        -webkit-box-direction: normal;
+
+        span{
+            margin-left: 10px;
+        }
+        &:hover{
+            color: black;
+        }
+        
+    }
+    .icon-heart-red {
+        color: red;
+    }
+
+}

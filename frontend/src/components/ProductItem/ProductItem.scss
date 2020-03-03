@@ -1,0 +1,242 @@
+.product-card {
+    background-color: white;
+    margin: 0 0 4% 0;
+    box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15);
+    display: block;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 22px 43px rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0 22px 43px rgba(0, 0, 0, 0.15);
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+        -moz-transform: none
+    }
+
+    .product-card-header{
+        height: 48px;
+
+        .card-buy-button {
+            background-color: #2fdab8;
+            display: block;
+            right: 0%;
+            height: 46px;
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+            text-decoration: none;
+            -webkit-transition: transform 350ms;
+            -webkit-transition: -webkit-transform 350ms;
+            transition: -webkit-transform 350ms;
+            transition: transform 350ms;
+            transition: transform 350ms, -webkit-transform 350ms;
+            -webkit-transform: translate(20px, 0);
+            transform: translate(20px, 0);
+            padding: 0px 40px 0 20px;
+
+            .price {
+                display: block;
+                float: left;
+                margin: 8px 0 0;
+                font-weight: bold;
+            }
+
+                        
+            &:hover {
+                background-color: #39ac95;
+                -webkit-transform: translate(0, 0);
+                transform: translate(0, 0)
+            }
+
+            &:hover:after {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                display: block;
+                opacity: 1;
+                -webkit-filter: none
+            }
+
+            &:after {
+                background-image: -webkit-image-set(url(./arrow.png) 1x, url(./arrow.png) 2x);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 16px;
+                -webkit-transform: scale(0);
+                transform: scale(0);
+                content: "";
+                display: block;
+                height: 100%;
+                opacity: 0;
+                position: absolute;
+                right: 18px;
+                top: 0;
+                width: 16px;
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+                -webkit-transition-property: opacity, -webkit-transform;
+                transition-property: opacity, -webkit-transform;
+                transition-property: transform, opacity;
+                transition-property: transform, opacity, -webkit-transform;
+                -webkit-transition-duration: 0.2s;
+                transition-duration: 0.2s;
+                -webkit-transition-timing-function: ease-in-out;
+                transition-timing-function: ease-in-out;
+            }
+        }
+    }
+
+    .product-card-body{
+        box-shadow: 0px 1px 1px #f9f9f9;
+        height: 220px;
+        display: block;
+    }
+
+    .product-card-image {
+        height: 220px;
+        width: 100%;
+        display: block;
+
+        img {
+            display: block;
+            height: 210px;
+            width: 60%;
+            margin: 0 20% 0;
+            -o-object-fit: contain;
+            object-fit: contain;
+            background-color: white;
+            position: absolute;
+            top: 12%;
+        }
+    }
+
+    .product-card-details {
+        margin: 0 18px 10px;
+
+        .product-details-name {
+            color: #b3b3b3;
+            font-size: 15px;
+            font-weight: 400;
+            height: 24px;
+            margin: 20px 0 0;
+            min-width: 270px;
+            overflow: hidden;
+            text-align: left;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 90%;
+        }
+
+        .product-details-brand {
+            font-size: 15px;
+            color: #b3b3b3;
+            font-weight: 400;
+            height: 19px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left;
+        }
+    }
+
+    .product-card-footer {
+        height: 30px;
+        margin: 14px 0 14px 0;
+    }
+
+    .feed-card-footer {
+        font-size: 15px;
+        color: #888888;
+
+        .footer-left-side {
+            width: 64%;
+            float: left;
+            height: 44px;
+        }
+
+        .trending-content .trending-footer-icon {
+            float: left;
+            margin: 0 0 0 16px;
+            width: 18;
+            height: 27;
+        }
+
+        .user-actions {
+            float: right;
+            max-width: 105px;
+        }
+    }
+
+    .card-footer-avatar {
+        border-radius: 15px;
+        float: left;
+        opacity: 0.99;
+        margin: 0px -28px 0px 16px;
+
+        div {
+            background-size: contain;
+            border-radius: 17px;
+            height: 30px;
+            width: 30px;
+            margin: 0;
+            opacity: 1;
+            border: 2px solid white;
+        }
+    }
+
+    .new-in-link {
+        display: block;
+        overflow: hidden;
+        height: 18px;
+        text-overflow: ellipsis;
+        margin: 6px 0 0 11px;
+        float: left;
+        white-space: nowrap;
+        text-decoration: none;
+    }
+
+    .product-card-span{
+        display: block;
+        margin: 6px 0 0 11px;
+        float: left;
+
+    }
+
+    .like-action {
+        margin-right: 12px;
+
+        .like-action-inner {
+            float: right;
+            margin: 0 3px 0 0;
+        }
+
+        .like-action-link {
+            cursor: pointer;
+            float: left;
+            margin: 7px 0 0 0;
+            -webkit-transition: opacity 350ms ease-in-out;
+            transition: opacity 350ms ease-in-out;
+
+            .icon-heart {
+                -webkit-transition: opacity 350ms ease-in-out;
+                transition: opacity 350ms ease-in-out;
+                opacity: 0.3;
+            }
+
+            .like-action-icon {
+                margin-right: 4px;
+            }
+        }
+    }
+
+    .icon-heart-red {
+        color: red;
+    }
+
+}
