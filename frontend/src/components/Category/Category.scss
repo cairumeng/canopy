@@ -1,0 +1,55 @@
+.category-collection{
+    width: 100%;
+    overflow-y: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: horizontal;
+    flex-direction: horizontal;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    background-color: white;
+    overflow-y: auto;
+    flex-wrap: wrap;
+    border: 1px solid whitesmoke;
+    font-weight: 500;
+    cursor: pointer;
+
+
+    &:hover {
+        background-color: whitesmoke;
+    }
+    .category-avatar{
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+        margin: 18% auto 30%;
+        width: 60%;
+        padding: 45% 0 0;
+        height: 0;
+        background-size: contain;
+    }
+    .category-name{
+       
+            bottom: 8%;
+            box-sizing: border-box;
+            color: #525252;
+            opacity: .6;
+            font-size: 18px;
+            left: 0;
+            line-height: 1.2;
+            padding: 0 10px;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            z-index: 2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-transition: opacity 0.2s ease-in-out;
+            transition: opacity 0.2s ease-in-out;
+        
+    }
+}
