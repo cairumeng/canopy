@@ -1,0 +1,53 @@
+
+.pageHeader{
+    background-color: white;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    padding: 84px 0;
+    text-align: center;
+    padding: 80px 0;
+    z-index: 2;
+    .pageHeader-content{
+        font-weight: 700;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-size: 32px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .pageHeader-top{
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        display: -webkit-flex;
+        -ms-flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-font-smoothing: antialiased;
+        color: rgba(0,0,0,0.4);
+        padding:20px 0 0  50px;
+        &:hover {
+            color:black;
+       }
+       
+    
+    }
+
+   
+
+}
