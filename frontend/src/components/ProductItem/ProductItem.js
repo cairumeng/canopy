@@ -6,10 +6,10 @@ import { withRouter } from 'react-router-dom'
 
 const ProductItem = ({ product, profileState, history, toggleLike }) => {
   const isLikedByMe = product.likedUsers?.some(
-    user => user.id === profileState.user?.id
+    (user) => user.id === profileState.user?.id
   )
 
-  const handleToggleLike = e => {
+  const handleToggleLike = (e) => {
     e.stopPropagation()
     toggleLike(product.id, profileState.user.id)
   }
@@ -27,7 +27,7 @@ const ProductItem = ({ product, profileState, history, toggleLike }) => {
         </div>
         <div className="product-card-body">
           <div className="product-card-image">
-            <img src={product.images[0]} />
+            <img src={product.images[0]} alt={product.name} />
           </div>
         </div>
 
@@ -45,8 +45,8 @@ const ProductItem = ({ product, profileState, history, toggleLike }) => {
         <div className="product-card-footer">
           <div className="feed-card-footer">
             <div className="footer-left-side most-popular-content">
-              {product.likedUsers?.map(user => (
-                <a href="" className="card-footer-avatar" key={user.id}>
+              {product.likedUsers?.map((user, index) => (
+                <a href="#" className="card-footer-avatar" key={index}>
                   <div
                     className="card-avatar"
                     style={{
@@ -80,13 +80,13 @@ const ProductItem = ({ product, profileState, history, toggleLike }) => {
   )
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
     profileState: store.getProfile,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     toggleLike: (productId, userId) => dispatch(toggleLike(productId, userId)),
   }

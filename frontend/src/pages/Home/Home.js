@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import ProductList from '../../components/ProductList/ProductList'
 import Loading from '../../components/Loading/Loading'
@@ -54,9 +54,9 @@ class Home extends React.Component {
     this.setState({
       isLoading: true,
     })
-    this.props.getProducts().then(response => {
+    this.props.getProducts().then((response) => {
       this.setState({
-        categoryName: response.categoryName,
+        categoryName: response?.categoryName,
       })
     })
   }
@@ -67,12 +67,8 @@ class Home extends React.Component {
   }
 
   render() {
-    const {
-      products,
-      lastPage,
-      pageIndex,
-      isLoading,
-    } = this.props.productsState
+    const { products, lastPage, pageIndex, isLoading } =
+      this.props.productsState
 
     return (
       <>
@@ -94,15 +90,15 @@ class Home extends React.Component {
   }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
     productsState: store.getProducts,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    getProducts: pageIndex => dispatch(getProducts(pageIndex)),
+    getProducts: (pageIndex) => dispatch(getProducts(pageIndex)),
   }
 }
 

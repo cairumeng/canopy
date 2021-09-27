@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import { getProfile } from '../../redux/actions/user'
 import './Profile.css'
 
-const Profile = props => {
+const Profile = (props) => {
   const { name, avatar, nickname, description } = props.profileState.user
 
   useEffect(() => {
     props.getProfile()
-  }, [])
+  }, [props])
 
   return (
     <div className=" container-fluide user-header">
@@ -21,13 +21,13 @@ const Profile = props => {
   )
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
     profileState: store.getProfile,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     getProfile: () => dispatch(getProfile()),
   }

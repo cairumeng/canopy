@@ -10,31 +10,36 @@ const Product = ({ match, profileState }) => {
   const [previewImage, setPreviewImage] = useState('')
 
   useEffect(() => {
-    getProduct(match.params.id).then(product => {
+    getProduct(match.params.id).then((product) => {
       setProduct(product)
       setPreviewImage(product.images[0])
       setLoading(false)
     })
-  }, [])
+  }, [match.params.id])
 
   if (isLoading) {
     return <Loading />
   }
 
   const isLikedByMe = product.likedUsers?.find(
-    user => user.id === profileState.user?.id
+    (user) => user.id === profileState.user?.id
   )
 
   return (
     <div className="container product-detail">
       <div className="row">
         <div className="col-lg-6 col-md-6 col-xs-12">
-          <img className="product-preview" src={previewImage} />
+          <img
+            className="product-preview"
+            src={previewImage}
+            alt="product-preview"
+          />
           <div className="mt-3 product-images">
             {product.images.map((productImage, i) => (
               <img
                 src={productImage}
                 key={i}
+                alt={product.name}
                 className="avatar"
                 onMouseEnter={() => setPreviewImage(productImage)}
               />
@@ -51,8 +56,13 @@ const Product = ({ match, profileState }) => {
             ${product.price} on Amazon Prime
           </button>
           <div className="mt-3">
-            {product.likedUsers.map(user => (
-              <img src={user.avatar} key={user.id} className="avatar" />
+            {product.likedUsers.map((user) => (
+              <img
+                src={user.avatar}
+                key={user.id}
+                className="avatar"
+                alt={user.name}
+              />
             ))}
           </div>
           <div className="mt-5">
@@ -60,7 +70,7 @@ const Product = ({ match, profileState }) => {
             <span className="brand">{product.owner.nickname}</span>
           </div>
           <div className="mt-3">
-            <a className="icon-heart">
+            <a href="#" className="icon-heart">
               <i
                 className={
                   'fa fa-heart ' + (isLikedByMe ? 'icon-heart-red' : '')
@@ -75,13 +85,13 @@ const Product = ({ match, profileState }) => {
   )
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
     profileState: store.getProfile,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {}
 }
 

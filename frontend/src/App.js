@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import { connect } from 'react-redux'
 import Profile from './pages/Profile/Profile'
@@ -15,7 +15,7 @@ import { getProfile } from './redux/actions/user'
 import axios from './axios'
 import './App.css'
 
-const App = props => {
+const App = (props) => {
   const token = localStorage.getItem('CANOPY_TOKEN')
   if (token) {
     axios.defaults.headers.common.Authorization = token
@@ -44,11 +44,11 @@ const App = props => {
   )
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {}
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     getProfile: () => dispatch(getProfile()),
   }
